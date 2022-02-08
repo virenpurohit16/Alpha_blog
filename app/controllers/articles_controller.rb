@@ -12,10 +12,6 @@ class ArticlesController < ApplicationController
       @article = Article.new
     end
 
-    def edit
-      @article = Article.find(params[:id])
-    end
-
     def create
       @article = Article.new(params.require(:article).permit(:title, :description))
       if @article.save
@@ -26,6 +22,7 @@ class ArticlesController < ApplicationController
       end
     end
 
+<<<<<<< HEAD
     def update
       @article = Article.find(params[:id])
       if @article.update(params.require(:article).permit(:title, :description))
@@ -42,4 +39,6 @@ class ArticlesController < ApplicationController
       redirect_to articles_path
     end
 
+=======
+>>>>>>> parent of 79f0498... Enabling editing and updating of existing articles
 end
